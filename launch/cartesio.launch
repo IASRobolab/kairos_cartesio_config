@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="gui" default="true"/>
+    <arg name="use_capsules_collisions" default="false"/>
+    
+
+    <!-- General arguments -->
+    <arg name="robot_id" default="rb_kairos"/>
+    <arg name="has_pole_camera" default="false"/>
+    
+    <!-- Summit XLS arguments -->
+    <arg name="base_id" default="summit_xls"/>
+    <arg name="base_launch_ros_force_based_move" default="false"/>
+    <arg name="base_launch_ros_planar_move_plugin" default="false"/>
+
+    <!-- Panda arguments -->
+    <arg name="arm_id" default="ur16e"/>
+    <arg name="arm_transmission_type" default="position"/>
+	<arg name="arm_gazebo_ros_control" default="false"/>
+    <!-- <arg name="arm_launch_gripper" default="franka_gripper"/> -->
+    <arg name="arm_launch_gripper" default="no_gripper"/>
+    
+    <arg name="interface_type" default="HARDWARE"/>
+
+    
+    <!-- Set arm transmission type -->
+    <arg if="$(eval arm_transmission_type == 'position')" name="arm_hw_interface_type" value="hardware_interface/PositionJointInterface"/>
+    <arg if="$(eval arm_transmission_type == 'velocity')" name="arm_hw_interface_type" value="hardware_interface/VelocityJointInterface"/>
+    <!-- <arg if="$(eval arm_transmission_type == 'velocity')" name="arm_hw_interface_type" value="hardware_interface/EffortJointInterface"/> -->
+    <arg if="$(eval arm_transmission_type == 'effort')" name="arm_hw_interface_type" value="hardware_interface/EffortJointInterface"/>
+
+    <!-- Load Robot description & related Cartesio Problem-->
+    <group if="$(arg use_capsules_collisions)">
+  	<param name="robot_description" textfile="$(find kairos_cartesio_config)/capsules/fb_kairos_ur5e_oem_capsules.rviz"/>
+    	<param name="cartesian/problem_description" textfile="$(find kairos_cartesio_config)/stack/kairos_collision_capsules.stack"/>
+    </group>
+    
+    <group unless="$(arg use_capsules_collisions)">
+    	<arg name="xacro_robot" default="$(find kairos_cartesio_config)/robots/fb_kairos_ur5e_oem.urdf.xacro"/>
+    	<param name="robot_description" command="$(find xacro)/xacro $(arg xacro_robot)
+                                            robot_id:=$(arg robot_id)
+                                            namespace:=
+                                            has_pole_camera:=$(arg has_pole_camera)
+                                            base_ros_planar_move_plugin:=$(arg base_launch_ros_planar_move_plugin)
+                                            base_ros_force_based_move:=$(arg base_launch_ros_force_based_move)
+                                            base_gazebo_ros_control:=true
+                                            arm_id:=$(arg arm_id)
+                                            launch_gripper:=$(arg arm_launch_gripper)
+                                            arm_transmission_type:=$(arg arm_hw_interface_type)
+                                            interface_type:=$(arg interface_type)"/>
+    	<param name="cartesian/problem_description" textfile="$(find kairos_cartesio_config)/stack/kairos_collision.stack"/>
+    </group>
+    
+    
+
+    <param name="robot_description_semantic" command="$(find xacro)/xacro $(find kairos_cartesio_config)/robots/fb_kairos_ur5e_oem.srdf.xacro
+        				     robot_id:=$(arg robot_id)
+                                            namespace:=
+                                            has_pole_camera:=$(arg has_pole_camera)
+                                            base_ros_planar_move_plugin:=$(arg base_launch_ros_planar_move_plugin)
+                                            base_ros_force_based_move:=$(arg base_launch_ros_force_based_move)
+                                            base_gazebo_ros_control:=true
+                                            arm_id:=$(arg arm_id)
+                                            launch_gripper:=$(arg arm_launch_gripper)
+                                            arm_transmission_type:=$(arg arm_hw_interface_type)
+                                            interface_type:=$(arg interface_type)"/>
+        
+    
+    <arg name="prefix" default=""/>
+    <include file="$(find cartesian_interface)/launch/cartesio.launch">
+        <arg name="rate" value="100.0"/>
+        <arg name="prefix" value="$(arg prefix)"/>
+        <arg name="is_model_floating_base" value="true"/>
+    </include>
+        
+     
+    <node if="$(arg gui)"
+            type="rviz"
+            name="rviz"
+            pkg="rviz"
+            args="-d $(find kairos_cartesio_config)/launch/cartesio.rviz"
+            output="screen"/>
+    
+    
+</launch>

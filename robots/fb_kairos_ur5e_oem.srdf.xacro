@@ -1,0 +1,51 @@
+<?xml version="1.0" ?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="rb_kairos_ur10e">
+<xacro:include filename="$(find hrii_rb_kairos_description)/robots/rb_kairos_ur5e_oem.urdf.xacro" />
+
+  <group name="base">
+    <link name="${base_prefix}_base_link"/>
+  </group>
+  
+  <group name="EE">
+    <chain base_link="${base_prefix}_base_link" tip_link="${arm_prefix}EE"/>
+  </group>
+  
+  <group name="FLW">
+    <chain base_link="${base_prefix}_base_link" tip_link="${base_prefix}_front_left_wheel_link"/>
+  </group>
+  
+  <group name="FRW">
+    <chain base_link="${base_prefix}_base_link" tip_link="${base_prefix}_front_right_wheel_link"/>
+  </group>
+  
+  <group name="BLW">
+    <chain base_link="${base_prefix}_base_link" tip_link="${base_prefix}_back_left_wheel_link"/>
+  </group>
+  
+  <group name="BRW">
+    <chain base_link="${base_prefix}_base_link" tip_link="${base_prefix}_back_right_wheel_link"/>
+  </group>
+  
+  <group name="chains">
+    <group name="EE"/>
+    <group name="FLW"/>
+    <group name="FRW"/>
+    <group name="BLW"/>
+    <group name="BRW"/>
+  </group>
+  
+  <group_state group="chains" name="home">
+    <joint name="${arm_prefix}shoulder_pan_joint" value="0.0"/>
+    <joint name="${arm_prefix}shoulder_lift_joint" value="-0.6"/>
+    <joint name="${arm_prefix}elbow_joint" value="1.3"/>
+    <joint name="${arm_prefix}wrist_1_joint" value="-0.7"/>
+    <joint name="${arm_prefix}wrist_2_joint" value="0.0"/>
+    <joint name="${arm_prefix}wrist_3_joint" value="0.0"/>
+    
+    <joint name="${base_prefix}_front_left_wheel_joint" value="0.0"/>
+    <joint name="${base_prefix}_front_right_wheel_joint" value="0.0"/>
+    <joint name="${base_prefix}_back_left_wheel_joint" value="0.0"/>
+    <joint name="${base_prefix}_back_right_wheel_joint" value="0.0"/>
+  </group_state>
+  
+</robot>

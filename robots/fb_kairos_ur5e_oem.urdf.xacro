@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="rb_kairos_ur10e">
+
+
+<xacro:include filename="$(find hrii_rb_kairos_description)/robots/rb_kairos_ur5e_oem.urdf.xacro" />
+
+<link name="world"/>
+  <joint name="reference" type="floating">
+    <parent link="world"/>
+    <child link="${base_prefix}_base_footprint"/>
+</joint>
+
+
+</robot>

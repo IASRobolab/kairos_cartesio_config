@@ -1,0 +1,950 @@
+<?xml version="1.0" ?>
+<robot name="rb_kairos_ur10e" version="1.0">
+  <gazebo reference="base_footprint">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <link name="rb_kairos_base_footprint">
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <box size="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="rb_kairos_base_footprint_joint" type="fixed">
+    <origin xyz="0.0 0.0 0.127" rpy="0.0 0.0 0.0"/>
+    <parent link="rb_kairos_base_footprint"/>
+    <child link="rb_kairos_base_link"/>
+  </joint>
+  <link name="rb_kairos_base_link">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+      <mass value="125.0"/>
+      <inertia ixx="1.391" ixy="0.004" ixz="0.0" iyy="6.853" iyz="0.0" izz="6.125"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://hrii_robotnik_description/meshes/bases/xls/summit_xlsk_oem.stl"/>
+      </geometry>
+      <material name="black">
+        <color rgba="0.0 0.0 0.0 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.0002570000000000003 3.2995005e-05 0.2768315" rpy="-2.66490617042803 1.5703099447066808 -2.6646829518144006"/>
+      <geometry>
+        <cylinder radius="0.474306" length="0.2105700249070154"/>
+      </geometry>
+    </collision>
+  </link>
+  <gazebo reference="rb_kairos_base_link">
+    <material>Gazebo/Black</material>
+  </gazebo>
+  <link name="rb_kairos_base_chapa">
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://hrii_robotnik_description/meshes/bases/xls/summit_xls_chapas_inox_tapas.stl"/>
+      </geometry>
+      <material name="darkgrey">
+        <color rgba="0.5 0.5 0.5 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="rb_kairos_base_tapa_joint" type="fixed">
+    <origin xyz="0.0 0.0 0.38062" rpy="0.0 0.0 0.0"/>
+    <parent link="rb_kairos_base_link"/>
+    <child link="rb_kairos_base_chapa"/>
+  </joint>
+  <link name="rb_kairos_base_logo_left">
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://hrii_robotnik_description/meshes/bases/xls/robotnik_logo_chasis.stl"/>
+      </geometry>
+      <material name="darkgrey">
+        <color rgba="0.5 0.5 0.5 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="rb_kairos_base_logo_left_joint" type="fixed">
+    <origin xyz="0.0 0.28931 0.29062" rpy="0.0 0.0 0.0"/>
+    <parent link="rb_kairos_base_link"/>
+    <child link="rb_kairos_base_logo_left"/>
+  </joint>
+  <link name="rb_kairos_base_logo_right">
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://hrii_robotnik_description/meshes/bases/xls/robotnik_logo_chasis.stl"/>
+      </geometry>
+      <material name="darkgrey">
+        <color rgba="0.5 0.5 0.5 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="rb_kairos_base_logo_right_joint" type="fixed">
+    <origin xyz="0.0 -0.28931 0.29062" rpy="0.0 0.0 3.141592653589793"/>
+    <parent link="rb_kairos_base_link"/>
+    <child link="rb_kairos_base_logo_right"/>
+  </joint>
+  <link name="rb_kairos_base_logo_front">
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://hrii_robotnik_description/meshes/bases/xls/robotnik_logo_chasis.stl"/>
+      </geometry>
+      <material name="darkgrey">
+        <color rgba="0.5 0.5 0.5 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="rb_kairos_base_logo_front_joint" type="fixed">
+    <origin xyz="0.345 0.0 0.0" rpy="0.0 0.0 -1.5707963267948966"/>
+    <parent link="rb_kairos_base_link"/>
+    <child link="rb_kairos_base_logo_front"/>
+  </joint>
+  <link name="rb_kairos_base_logo_rear">
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://hrii_robotnik_description/meshes/bases/xls/robotnik_logo_chasis.stl"/>
+      </geometry>
+      <material name="darkgrey">
+        <color rgba="0.5 0.5 0.5 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="rb_kairos_base_logo_rear_joint" type="fixed">
+    <origin xyz="-0.345 0.0 0.0" rpy="0.0 0.0 1.5707963267948966"/>
+    <parent link="rb_kairos_base_link"/>
+    <child link="rb_kairos_base_logo_rear"/>
+  </joint>
+  <link name="rb_kairos_base_docking_contact"/>
+  <joint name="rb_kairos_base_docking_joint" type="fixed">
+    <origin xyz="0.35 0.0 0.09" rpy="0.0 0.0 0.0"/>
+    <parent link="rb_kairos_base_link"/>
+    <child link="rb_kairos_base_docking_contact"/>
+  </joint>
+  <joint name="rb_kairos_front_right_wheel_joint" type="continuous">
+    <origin xyz="0.21528 -0.269 0.0" rpy="0.0 0.0 0.0"/>
+    <axis xyz="0.0 1.0 0.0"/>
+    <parent link="rb_kairos_base_link"/>
+    <child link="rb_kairos_front_right_wheel_link"/>
+    <limit effort="100.0" lower="0" upper="0" velocity="100.0"/>
+  </joint>
+  <link name="rb_kairos_front_right_wheel_link">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+      <mass value="6.5"/>
+      <inertia ixx="0.0303095" ixy="0.0" ixz="0.0" iyy="0.05241925" iyz="0.0" izz="0.0303095"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://hrii_robotnik_description/meshes/wheels/omni_wheel_2.dae"/>
+      </geometry>
+      <material name="darkgrey">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0 0.0 0.0" rpy="1.570795 0.0 0.0"/>
+      <geometry>
+        <cylinder radius="0.127" length="0.087"/>
+      </geometry>
+    </collision>
+  </link>
+  <transmission name="rb_kairos_front_right_wheel_joint_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="rb_kairos_front_right_wheel_joint">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="rb_kairos_front_right_wheel_joint_motor">
+      <mechanicalReduction>1.0</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <gazebo reference="rb_kairos_front_right_wheel_link">
+    <mu1 value="0.2"/>
+    <mu2 value="0.2"/>
+    <minDepth value="0.001"/>
+  </gazebo>
+  <joint name="rb_kairos_front_left_wheel_joint" type="continuous">
+    <origin xyz="0.21528 0.269 0.0" rpy="0.0 0.0 0.0"/>
+    <axis xyz="0.0 1.0 0.0"/>
+    <parent link="rb_kairos_base_link"/>
+    <child link="rb_kairos_front_left_wheel_link"/>
+    <limit effort="100.0" lower="0" upper="0" velocity="100.0"/>
+  </joint>
+  <link name="rb_kairos_front_left_wheel_link">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+      <mass value="6.5"/>
+      <inertia ixx="0.0303095" ixy="0.0" ixz="0.0" iyy="0.05241925" iyz="0.0" izz="0.0303095"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://hrii_robotnik_description/meshes/wheels/omni_wheel_1.dae"/>
+      </geometry>
+      <material name="darkgrey">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0 0.0 0.0" rpy="1.570795 0.0 0.0"/>
+      <geometry>
+        <cylinder radius="0.127" length="0.087"/>
+      </geometry>
+    </collision>
+  </link>
+  <transmission name="rb_kairos_front_left_wheel_joint_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="rb_kairos_front_left_wheel_joint">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="rb_kairos_front_left_wheel_joint_motor">
+      <mechanicalReduction>1.0</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <gazebo reference="rb_kairos_front_left_wheel_link">
+    <mu1 value="0.2"/>
+    <mu2 value="0.2"/>
+    <minDepth value="0.001"/>
+  </gazebo>
+  <joint name="rb_kairos_back_left_wheel_joint" type="continuous">
+    <origin xyz="-0.21528 0.269 0.0" rpy="0.0 0.0 0.0"/>
+    <axis xyz="0.0 1.0 0.0"/>
+    <parent link="rb_kairos_base_link"/>
+    <child link="rb_kairos_back_left_wheel_link"/>
+    <limit effort="100.0" lower="0" upper="0" velocity="100.0"/>
+  </joint>
+  <link name="rb_kairos_back_left_wheel_link">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+      <mass value="6.5"/>
+      <inertia ixx="0.0303095" ixy="0.0" ixz="0.0" iyy="0.05241925" iyz="0.0" izz="0.0303095"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://hrii_robotnik_description/meshes/wheels/omni_wheel_1.dae"/>
+      </geometry>
+      <material name="darkgrey">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0 0.0 0.0" rpy="1.570795 0.0 0.0"/>
+      <geometry>
+        <cylinder radius="0.127" length="0.087"/>
+      </geometry>
+    </collision>
+  </link>
+  <transmission name="rb_kairos_back_left_wheel_joint_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="rb_kairos_back_left_wheel_joint">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="rb_kairos_back_left_wheel_joint_motor">
+      <mechanicalReduction>1.0</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <gazebo reference="rb_kairos_back_left_wheel_link">
+    <mu1 value="0.2"/>
+    <mu2 value="0.2"/>
+    <minDepth value="0.001"/>
+  </gazebo>
+  <joint name="rb_kairos_back_right_wheel_joint" type="continuous">
+    <origin xyz="-0.21528 -0.269 0.0" rpy="0.0 0.0 0.0"/>
+    <axis xyz="0.0 1.0 0.0"/>
+    <parent link="rb_kairos_base_link"/>
+    <child link="rb_kairos_back_right_wheel_link"/>
+    <limit effort="100.0" lower="0" upper="0" velocity="100.0"/>
+  </joint>
+  <link name="rb_kairos_back_right_wheel_link">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+      <mass value="6.5"/>
+      <inertia ixx="0.0303095" ixy="0.0" ixz="0.0" iyy="0.05241925" iyz="0.0" izz="0.0303095"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://hrii_robotnik_description/meshes/wheels/omni_wheel_2.dae"/>
+      </geometry>
+      <material name="darkgrey">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0 0.0 0.0" rpy="1.570795 0.0 0.0"/>
+      <geometry>
+        <cylinder radius="0.127" length="0.087"/>
+      </geometry>
+    </collision>
+  </link>
+  <transmission name="rb_kairos_back_right_wheel_joint_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="rb_kairos_back_right_wheel_joint">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="rb_kairos_back_right_wheel_joint_motor">
+      <mechanicalReduction>1.0</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <gazebo reference="rb_kairos_back_right_wheel_link">
+    <mu1 value="0.2"/>
+    <mu2 value="0.2"/>
+    <minDepth value="0.001"/>
+  </gazebo>
+  <joint name="rb_kairos_imu_joint" type="fixed">
+    <origin xyz="0.127 -0.129 0.212" rpy="0.0 0.0 0.0"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="rb_kairos_base_link"/>
+    <child link="rb_kairos_imu_link"/>
+  </joint>
+  <link name="rb_kairos_imu_link">
+    <inertial>
+      <origin xyz="0.0 0.0 0.01" rpy="0.0 0.0 0.0"/>
+      <mass value="0.05"/>
+      <inertia ixx="3.3333333333333337e-06" ixy="0.0" ixz="0.0" iyy="3.3333333333333337e-06" iyz="0.0" izz="3.3333333333333337e-06"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <box size="0.001 0.001 0.001"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <box size="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <gazebo>
+    <plugin filename="libhector_gazebo_ros_imu.so" name="rb_kairos_imu_controller">
+      <alwaysOn>true</alwaysOn>
+      <topicName>imu/data</topicName>
+      <serviceName>rb_kairos_imuimu/service</serviceName>
+      <bodyName>rb_kairos_imu_link</bodyName>
+      <frameId>rb_kairos_imu_link</frameId>
+      <updateRate>50.0</updateRate>
+      <gaussianNoise>0.00</gaussianNoise>
+      <yawOffset>0.0</yawOffset>
+      <yawDrift>0.0</yawDrift>
+      <yawGaussianNoise>0.0</yawGaussianNoise>
+      <rateOffset>0.0 0.0 0.0</rateOffset>
+      <rateDrift>0.0 0.0 0.0</rateDrift>
+      <rateGaussianNoise>0.0 0.0 0.0</rateGaussianNoise>
+      <accelOffset>0.0 0.0 0.0</accelOffset>
+      <accelDrift>0.0 0.0 0.0</accelDrift>
+      <accelGaussianNoise>0.0 0.0 0.0</accelGaussianNoise>
+    </plugin>
+  </gazebo>
+  <joint name="rb_kairos_front_laser_base_joint" type="fixed">
+    <origin xyz="0.28783 -0.2224 0.22365" rpy="0.0 3.14159 2.3561924999999997"/>
+    <parent link="rb_kairos_base_link"/>
+    <child link="rb_kairos_front_laser_base_link"/>
+  </joint>
+  <link name="rb_kairos_front_laser_base_link">
+    <inertial>
+      <origin xyz="0.0 0.0 0.035" rpy="0.0 0.0 0.0"/>
+      <mass value="0.13"/>
+      <inertia ixx="8.016666666666669e-05" ixy="0.0" ixz="0.0" iyy="8.016666666666669e-05" iyz="0.0" izz="5.4166666666666685e-05"/>
+    </inertial>
+    <collision>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <box size="0.01 0.01 0.01"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://robotnik_sensors/meshes/hokuyo_ust_10lx.dae"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="rb_kairos_front_laser_joint" type="fixed">
+    <origin xyz="0.0 0.0 0.0474" rpy="0.0 0.0 0.0"/>
+    <parent link="rb_kairos_front_laser_base_link"/>
+    <child link="rb_kairos_front_laser_link"/>
+  </joint>
+  <link name="rb_kairos_front_laser_link"/>
+  <gazebo reference="rb_kairos_front_laser_link">
+    <sensor name="rb_kairos_front_laser_sensor" type="gpu_ray">
+      <pose>0 0 0 0 0 0</pose>
+      <visualize>false</visualize>
+      <update_rate>40</update_rate>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>1081</samples>
+            <resolution>1</resolution>
+            <min_angle>-2.3562</min_angle>
+            <max_angle>2.3562</max_angle>
+          </horizontal>
+        </scan>
+        <range>
+          <min>0.06</min>
+          <max>10.0</max>
+          <resolution>0.004359297</resolution>
+        </range>
+        <noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>0.01</stddev>
+        </noise>
+      </ray>
+      <plugin filename="libgazebo_ros_gpu_laser.so" name="rb_kairos_front_laser_controller">
+        <topicName>front_laser/scan</topicName>
+        <frameName>/rb_kairos_front_laser_link</frameName>
+      </plugin>
+    </sensor>
+  </gazebo>
+  <joint name="rb_kairos_rear_laser_base_joint" type="fixed">
+    <origin xyz="-0.28783 0.2224 0.22365" rpy="0.0 3.14159 -0.7853975"/>
+    <parent link="rb_kairos_base_link"/>
+    <child link="rb_kairos_rear_laser_base_link"/>
+  </joint>
+  <link name="rb_kairos_rear_laser_base_link">
+    <inertial>
+      <origin xyz="0.0 0.0 0.035" rpy="0.0 0.0 0.0"/>
+      <mass value="0.13"/>
+      <inertia ixx="8.016666666666669e-05" ixy="0.0" ixz="0.0" iyy="8.016666666666669e-05" iyz="0.0" izz="5.4166666666666685e-05"/>
+    </inertial>
+    <collision>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <box size="0.01 0.01 0.01"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://robotnik_sensors/meshes/hokuyo_ust_10lx.dae"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="rb_kairos_rear_laser_joint" type="fixed">
+    <origin xyz="0.0 0.0 0.0474" rpy="0.0 0.0 0.0"/>
+    <parent link="rb_kairos_rear_laser_base_link"/>
+    <child link="rb_kairos_rear_laser_link"/>
+  </joint>
+  <link name="rb_kairos_rear_laser_link"/>
+  <gazebo reference="rb_kairos_rear_laser_link">
+    <sensor name="rb_kairos_rear_laser_sensor" type="gpu_ray">
+      <pose>0 0 0 0 0 0</pose>
+      <visualize>false</visualize>
+      <update_rate>40</update_rate>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>1081</samples>
+            <resolution>1</resolution>
+            <min_angle>-2.3562</min_angle>
+            <max_angle>2.3562</max_angle>
+          </horizontal>
+        </scan>
+        <range>
+          <min>0.06</min>
+          <max>10.0</max>
+          <resolution>0.004359297</resolution>
+        </range>
+        <noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>0.01</stddev>
+        </noise>
+      </ray>
+      <plugin filename="libgazebo_ros_gpu_laser.so" name="rb_kairos_rear_laser_controller">
+        <topicName>rear_laser/scan</topicName>
+        <frameName>/rb_kairos_rear_laser_link</frameName>
+      </plugin>
+    </sensor>
+  </gazebo>
+  <joint name="rb_kairos_front_rgbd_camera_joint" type="fixed">
+    <origin xyz="0.3585 0.0 0.28062" rpy="0.0 0.0 0.0"/>
+    <parent link="rb_kairos_base_link"/>
+    <child link="rb_kairos_front_rgbd_camera_link"/>
+  </joint>
+  <link name="rb_kairos_front_rgbd_camera_link">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+      <mass value="0.001"/>
+      <inertia ixx="2.3437500000000006e-06" ixy="0.0" ixz="0.0" iyy="2.0833333333333336e-07" iyz="0.0" izz="2.4020833333333336e-06"/>
+    </inertial>
+  </link>
+  <joint name="rb_kairos_front_rgbd_camera_rgb_joint" type="fixed">
+    <origin xyz="0.0 0.0125 0.015" rpy="0.0 0.0 0.0"/>
+    <parent link="rb_kairos_front_rgbd_camera_link"/>
+    <child link="rb_kairos_front_rgbd_camera_rgb_frame"/>
+  </joint>
+  <link name="rb_kairos_front_rgbd_camera_rgb_frame">
+    <inertial>
+      <origin xyz="-0.02 -0.0125 0.0" rpy="0 0 0"/>
+      <mass value="0.297"/>
+      <inertia ixx="0.0006960937500000001" ixy="0.0" ixz="0.0" iyy="6.1875e-05" iyz="0.0" izz="0.00071341875"/>
+    </inertial>
+  </link>
+  <joint name="rb_kairos_front_rgbd_camera_rgb_optical_joint" type="fixed">
+    <origin xyz="0.0 0.0 0.0" rpy="-1.5707963267948966 0.0 -1.5707963267948966"/>
+    <parent link="rb_kairos_front_rgbd_camera_rgb_frame"/>
+    <child link="rb_kairos_front_rgbd_camera_rgb_optical_frame"/>
+  </joint>
+  <link name="rb_kairos_front_rgbd_camera_rgb_optical_frame">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="0.001"/>
+      <inertia ixx="2.3437500000000006e-06" ixy="0.0" ixz="0.0" iyy="2.0833333333333336e-07" iyz="0.0" izz="2.4020833333333336e-06"/>
+    </inertial>
+  </link>
+  <joint name="rb_kairos_front_rgbd_camera_depth_joint" type="fixed">
+    <origin xyz="0.0 0.0375 0.015" rpy="0.0 0.0 0.0"/>
+    <parent link="rb_kairos_front_rgbd_camera_link"/>
+    <child link="rb_kairos_front_rgbd_camera_depth_frame"/>
+  </joint>
+  <link name="rb_kairos_front_rgbd_camera_depth_frame">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+      <mass value="0.001"/>
+      <inertia ixx="2.3437500000000006e-06" ixy="0.0" ixz="0.0" iyy="2.0833333333333336e-07" iyz="0.0" izz="2.4020833333333336e-06"/>
+    </inertial>
+  </link>
+  <joint name="rb_kairos_front_rgbd_camera_depth_optical_joint" type="fixed">
+    <origin xyz="0.0 0.0 0.0" rpy="-1.5707963267948966 0.0 -1.5707963267948966"/>
+    <parent link="rb_kairos_front_rgbd_camera_depth_frame"/>
+    <child link="rb_kairos_front_rgbd_camera_depth_optical_frame"/>
+  </joint>
+  <link name="rb_kairos_front_rgbd_camera_depth_optical_frame">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+      <mass value="0.001"/>
+      <inertia ixx="2.3437500000000006e-06" ixy="0.0" ixz="0.0" iyy="2.0833333333333336e-07" iyz="0.0" izz="2.4020833333333336e-06"/>
+    </inertial>
+  </link>
+  <gazebo reference="rb_kairos_front_rgbd_camera_link">
+    <sensor name="rb_kairos_front_rgbd_camera_depth_sensor" type="depth">
+      <always_on>true</always_on>
+      <update_rate>20.0</update_rate>
+      <camera>
+        <horizontal_fov>1.0471975511965976</horizontal_fov>
+        <image>
+          <format>R8G8B8</format>
+          <width>640</width>
+          <height>480</height>
+        </image>
+        <clip>
+          <near>0.05</near>
+          <far>3.5</far>
+        </clip>
+      </camera>
+      <plugin filename="libgazebo_ros_openni_kinect.so" name="rb_kairos_front_rgbd_camera_controller">
+        <cameraName>front_rgbd_camera</cameraName>
+        <alwaysOn>true</alwaysOn>
+        <updateRate>10</updateRate>
+        <imageTopicName>rgb/image_raw</imageTopicName>
+        <depthImageTopicName>depth/image_raw</depthImageTopicName>
+        <pointCloudTopicName>depth/points</pointCloudTopicName>
+        <cameraInfoTopicName>rgb/camera_info</cameraInfoTopicName>
+        <depthImageCameraInfoTopicName>depth/camera_info</depthImageCameraInfoTopicName>
+        <frameName>/rb_kairos_front_rgbd_camera_depth_optical_frame</frameName>
+        <baseline>0.1</baseline>
+        <distortion_k1>0.0</distortion_k1>
+        <distortion_k2>0.0</distortion_k2>
+        <distortion_k3>0.0</distortion_k3>
+        <distortion_t1>0.0</distortion_t1>
+        <distortion_t2>0.0</distortion_t2>
+        <pointCloudCutoff>0.4</pointCloudCutoff>
+      </plugin>
+    </sensor>
+  </gazebo>
+  <link name="rb_kairos_ur16e_base_link">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="4.0"/>
+      <inertia ixx="0.00443333156" ixy="0.0" ixz="0.0" iyy="0.00443333156" iyz="0.0" izz="0.0072"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://hrii_universal_robots_description/meshes/ur5e/visual/base.dae"/>
+      </geometry>
+      <material name="LightGrey">
+        <color rgba="0.7 0.7 0.7 1.0"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="rb_kairos_ur16e_shoulder_pan_joint" type="continuous">
+    <origin xyz="0.0 0.0 0.1625" rpy="0.0 0.0 3.14159"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <parent link="rb_kairos_ur16e_base_link"/>
+    <child link="rb_kairos_ur16e_shoulder_link"/>
+    <limit effort="150.0" lower="-6.28318" upper="6.28318" velocity="3.15"/>
+    <dynamics damping="0.0" friction="0.0"/>
+  </joint>
+  <link name="rb_kairos_ur16e_shoulder_link">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="3.7"/>
+      <inertia ixx="0.010267495893" ixy="0.0" ixz="0.0" iyy="0.010267495893" iyz="0.0" izz="0.00666"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 3.14159"/>
+      <geometry>
+        <mesh filename="package://hrii_universal_robots_description/meshes/ur5e/visual/shoulder.dae"/>
+      </geometry>
+      <material name="LightGrey">
+        <color rgba="0.7 0.7 0.7 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="3.060317e-05 0.0082474 -0.003151774" rpy="1.9659515707241773 0.004132517015731552 0.006201210362490505"/>
+      <geometry>
+        <cylinder radius="0.0832319" length="0.014226880885683055"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="rb_kairos_ur16e_shoulder_lift_joint" type="continuous">
+    <origin xyz="0.0 0.0 0.0" rpy="1.570795 0.0 0.0"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <parent link="rb_kairos_ur16e_shoulder_link"/>
+    <child link="rb_kairos_ur16e_upper_arm_link"/>
+    <limit effort="150.0" lower="-6.28318" upper="6.28318" velocity="3.15"/>
+    <dynamics damping="0.0" friction="0.0"/>
+  </joint>
+  <link name="rb_kairos_ur16e_upper_arm_link">
+    <inertial>
+      <origin xyz="0.2125 0.0 0.138" rpy="0.0 0.0 0.0"/>
+      <mass value="8.393"/>
+      <inertia ixx="0.13813473641275" ixy="0.0" ixz="0.0" iyy="0.13813473641275" iyz="0.0" izz="0.0236053125"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.0 0.0 0.138" rpy="1.570795 0.0 -1.570795"/>
+      <geometry>
+        <mesh filename="package://hrii_universal_robots_description/meshes/ur5e/visual/upperarm.dae"/>
+      </geometry>
+      <material name="LightGrey">
+        <color rgba="0.7 0.7 0.7 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.22359316915255192 -0.0065882715 0.1679601915" rpy="-3.1148908113180243 1.570795 0.04755925171023542"/>
+      <geometry>
+        <cylinder radius="0.110215" length="0.44747021827210387"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="rb_kairos_ur16e_elbow_joint" type="continuous">
+    <origin xyz="-0.425 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <parent link="rb_kairos_ur16e_upper_arm_link"/>
+    <child link="rb_kairos_ur16e_forearm_link"/>
+    <limit effort="150.0" lower="-6.28318" upper="6.28318" velocity="3.15"/>
+    <dynamics damping="0.0" friction="0.0"/>
+  </joint>
+  <link name="rb_kairos_ur16e_forearm_link">
+    <inertial>
+      <origin xyz="0.1961 0.0 0.007" rpy="0.0 0.0 0.0"/>
+      <mass value="2.275"/>
+      <inertia ixx="0.0323610733888988" ixy="0.0" ixz="0.0" iyy="0.0323610733888988" iyz="0.0" izz="0.0063984375"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.0 0.0 0.007" rpy="1.570795 0.0 -1.570795"/>
+      <geometry>
+        <mesh filename="package://hrii_universal_robots_description/meshes/ur5e/visual/forearm.dae"/>
+      </geometry>
+      <material name="LightGrey">
+        <color rgba="0.7 0.7 0.7 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.17939083023077665 0.012507879999999999 0.036657" rpy="0.022407256807854468 1.570795 1.6215780600618875e-06"/>
+      <geometry>
+        <cylinder radius="0.073314" length="0.3587816604615533"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="rb_kairos_ur16e_wrist_1_joint" type="continuous">
+    <origin xyz="-0.3922 0.0 0.1333" rpy="0.0 0.0 0.0"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <parent link="rb_kairos_ur16e_forearm_link"/>
+    <child link="rb_kairos_ur16e_wrist_1_link"/>
+    <limit effort="28.0" lower="-6.28318" upper="6.28318" velocity="6.28"/>
+    <dynamics damping="0.0" friction="0.0"/>
+  </joint>
+  <link name="rb_kairos_ur16e_wrist_1_link">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="1.219"/>
+      <inertia ixx="0.002723965136246843" ixy="0.0" ixz="0.0" iyy="0.002723965136246843" iyz="0.0" izz="0.0034284375"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.0 0.0 -0.127" rpy="1.5707963267948966 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://hrii_universal_robots_description/meshes/ur5e/visual/wrist1.dae"/>
+      </geometry>
+      <material name="LightGrey">
+        <color rgba="0.7 0.7 0.7 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-6.8807000000000034e-06 0.0 0.005469285000000001" rpy="-0.20113528377731527 -0.005968906298001142 0.0006023125318858818"/>
+      <geometry>
+        <cylinder radius="0.0727752" length="0.024887588224355536"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="rb_kairos_ur16e_wrist_2_joint" type="continuous">
+    <origin xyz="0.0 -0.0997 0.0" rpy="1.570795 0.0 0.0"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <parent link="rb_kairos_ur16e_wrist_1_link"/>
+    <child link="rb_kairos_ur16e_wrist_2_link"/>
+    <limit effort="28.0" lower="-6.28318" upper="6.28318" velocity="3.2"/>
+    <dynamics damping="0.0" friction="0.0"/>
+  </joint>
+  <link name="rb_kairos_ur16e_wrist_2_link">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="1.219"/>
+      <inertia ixx="0.002721940581223332" ixy="0.0" ixz="0.0" iyy="0.002721940581223332" iyz="0.0" izz="0.0034284375"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.0 0.0 -0.0997" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://hrii_universal_robots_description/meshes/ur5e/visual/wrist2.dae"/>
+      </geometry>
+      <material name="LightGrey">
+        <color rgba="0.7 0.7 0.7 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="3.145165e-05 0.00929681 0.0" rpy="1.822037983050121 -0.003339066407211387 -0.004304314720615224"/>
+      <geometry>
+        <cylinder radius="0.0644024" length="0.026628540549890157"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="rb_kairos_ur16e_wrist_3_joint" type="continuous">
+    <origin xyz="0.0 0.0996 0.0" rpy="1.570795 3.14159 3.14159"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <parent link="rb_kairos_ur16e_wrist_2_link"/>
+    <child link="rb_kairos_ur16e_wrist_3_link"/>
+    <limit effort="28.0" lower="-6.28318" upper="6.28318" velocity="6.28"/>
+    <dynamics damping="0.0" friction="0.0"/>
+  </joint>
+  <link name="rb_kairos_ur16e_wrist_3_link">
+    <inertial>
+      <origin xyz="0.0 0.0 -0.025" rpy="0.0 0.0 0.0"/>
+      <mass value="0.1879"/>
+      <inertia ixx="0.00013427015462525002" ixy="0.0" ixz="0.0" iyy="0.00013427015462525002" iyz="0.0" izz="0.00019024874999999997"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.0 0.0 -0.0989" rpy="1.570795 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://hrii_universal_robots_description/meshes/ur5e/visual/wrist3.dae"/>
+      </geometry>
+      <material name="LightGrey">
+        <color rgba="0.7 0.7 0.7 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-5.5504369e-05 0.0 0.000827975" rpy="0.07412108955848312 -0.02715625769531409 -0.0010069485253996408"/>
+      <geometry>
+        <cylinder radius="0.0494953" length="0.004160703963552799"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="rb_kairos_ur16e_base"/>
+  <joint name="rb_kairos_ur16e_base_link-base_fixed_joint" type="fixed">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 -3.14159"/>
+    <parent link="rb_kairos_ur16e_base_link"/>
+    <child link="rb_kairos_ur16e_base"/>
+  </joint>
+  <link name="rb_kairos_ur16e_flange">
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <mass value="0.1879"/>
+      <inertia ixx="0.00013427015462525002" ixy="0.0" ixz="0.0" iyy="0.00013427015462525002" iyz="0.0" izz="0.00019024874999999997"/>
+    </inertial>
+  </link>
+  <joint name="rb_kairos_ur16e_wrist_3_link_flange_fixed_joint" type="fixed">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <parent link="rb_kairos_ur16e_wrist_3_link"/>
+    <child link="rb_kairos_ur16e_flange"/>
+  </joint>
+  <joint name="rb_kairos_joint_ur16e_link0_base_footprint" type="fixed">
+    <origin xyz="0.15887 0.0 0.18062" rpy="0.0 0.0 0.0"/>
+    <parent link="rb_kairos_base_chapa"/>
+    <child link="rb_kairos_ur16e_base_link"/>
+  </joint>
+  <link name="rb_kairos_ur16e_EE"/>
+  <joint name="rb_kairos_ur16e_joint_EE" type="fixed">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <axis xyz="0.0 0.0 0.0"/>
+    <parent link="rb_kairos_ur16e_flange"/>
+    <child link="rb_kairos_ur16e_EE"/>
+  </joint>
+  <gazebo>
+    <plugin filename="libgazebo_ros_control.so" name="ros_control">
+      <robotParam>robot_description</robotParam>
+      <controlPeriod>0.001</controlPeriod>
+      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+      <legacyModeNS>true</legacyModeNS>
+    </plugin>
+  </gazebo>
+  <transmission name="rb_kairos_ur16e_shoulder_pan_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="rb_kairos_ur16e_shoulder_pan_joint">
+      <hardwareInterface>position</hardwareInterface>
+    </joint>
+    <actuator name="rb_kairos_ur16e_shoulder_pan_motor">
+      <mechanicalReduction>1.0</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="rb_kairos_ur16e_shoulder_lift_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="rb_kairos_ur16e_shoulder_lift_joint">
+      <hardwareInterface>position</hardwareInterface>
+    </joint>
+    <actuator name="rb_kairos_ur16e_shoulder_lift_motor">
+      <mechanicalReduction>1.0</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="rb_kairos_ur16e_elbow_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="rb_kairos_ur16e_elbow_joint">
+      <hardwareInterface>position</hardwareInterface>
+    </joint>
+    <actuator name="rb_kairos_ur16e_elbow_motor">
+      <mechanicalReduction>1.0</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="rb_kairos_ur16e_wrist_1_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="rb_kairos_ur16e_wrist_1_joint">
+      <hardwareInterface>position</hardwareInterface>
+    </joint>
+    <actuator name="rb_kairos_ur16e_wrist_1_motor">
+      <mechanicalReduction>1.0</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="rb_kairos_ur16e_wrist_2_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="rb_kairos_ur16e_wrist_2_joint">
+      <hardwareInterface>position</hardwareInterface>
+    </joint>
+    <actuator name="rb_kairos_ur16e_wrist_2_motor">
+      <mechanicalReduction>1.0</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="rb_kairos_ur16e_wrist_3_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="rb_kairos_ur16e_wrist_3_joint">
+      <hardwareInterface>position</hardwareInterface>
+    </joint>
+    <actuator name="rb_kairos_ur16e_wrist_3_motor">
+      <mechanicalReduction>1.0</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="rb_kairos_ur16e_wrist_3_link_flange_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="rb_kairos_ur16e_wrist_3_link_flange_fixed_joint">
+      <hardwareInterface>position</hardwareInterface>
+    </joint>
+    <actuator name="rb_kairos_ur16e_wrist_3_link_flange_motor">
+      <mechanicalReduction>1.0</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <gazebo reference="rb_kairos_ur16e_base_link">
+    <selfCollide>False</selfCollide>
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <minDepth>0.001</minDepth>
+    <maxVel>0</maxVel>
+  </gazebo>
+  <gazebo reference="rb_kairos_ur16e_shoulder_link">
+    <selfCollide>False</selfCollide>
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+  </gazebo>
+  <gazebo reference="rb_kairos_ur16e_upper_arm_link">
+    <selfCollide>False</selfCollide>
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+  </gazebo>
+  <gazebo reference="rb_kairos_ur16e_forearm_link">
+    <selfCollide>False</selfCollide>
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+  </gazebo>
+  <gazebo reference="rb_kairos_ur16e_wrist_1_link">
+    <selfCollide>False</selfCollide>
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+  </gazebo>
+  <gazebo reference="rb_kairos_ur16e_wrist_3_link">
+    <selfCollide>False</selfCollide>
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+  </gazebo>
+  <gazebo reference="rb_kairos_ur16e_wrist_2_link">
+    <selfCollide>False</selfCollide>
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+  </gazebo>
+  <gazebo reference="rb_kairos_ur16e_ee_link">
+    <selfCollide>False</selfCollide>
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+  </gazebo>
+  <gazebo reference="rb_kairos_ur16e_shoulder_pan_joint">
+    <implicitSpringDamper>1</implicitSpringDamper>
+    <provideFeedback>true</provideFeedback>
+  </gazebo>
+  <gazebo reference="rb_kairos_ur16e_shoulder_lift_joint">
+    <implicitSpringDamper>1</implicitSpringDamper>
+    <provideFeedback>true</provideFeedback>
+  </gazebo>
+  <gazebo reference="rb_kairos_ur16e_elbow_joint">
+    <implicitSpringDamper>1</implicitSpringDamper>
+    <provideFeedback>true</provideFeedback>
+  </gazebo>
+  <gazebo reference="rb_kairos_ur16e_wrist_1_joint">
+    <implicitSpringDamper>1</implicitSpringDamper>
+    <provideFeedback>true</provideFeedback>
+  </gazebo>
+  <gazebo reference="rb_kairos_ur16e_wrist_2_joint">
+    <implicitSpringDamper>1</implicitSpringDamper>
+    <provideFeedback>true</provideFeedback>
+  </gazebo>
+  <gazebo reference="rb_kairos_ur16e_wrist_3_joint">
+    <implicitSpringDamper>1</implicitSpringDamper>
+    <provideFeedback>true</provideFeedback>
+  </gazebo>
+  <gazebo reference="rb_kairos_ur16e_wrist_3_link_flange_fixed_joint">
+    <implicitSpringDamper>1</implicitSpringDamper>
+    <provideFeedback>true</provideFeedback>
+  </gazebo>
+  <gazebo>
+    <plugin filename="libgazebo_ros_ft_sensor.so" name="rb_kairos_ur16e_flange_ft_sensor">
+      <updateRate>100.0</updateRate>
+      <topicName>wrench</topicName>
+      <jointName>rb_kairos_ur16e_wrist_3_link_flange_fixed_joint</jointName>
+    </plugin>
+  </gazebo>
+  <gazebo>
+    <plugin filename="libgazebo_ros_ft_sensor.so" name="rb_kairos_ur16e_flange_ft_sensor">
+      <updateRate>100.0</updateRate>
+      <topicName>ur16e_ft_sensor</topicName>
+      <jointName>rb_kairos_ur16e_wrist_3_link_flange_fixed_joint</jointName>
+    </plugin>
+  </gazebo>
+  <link name="world"/>
+  <joint name="reference" type="floating">
+    <parent link="world"/>
+    <child link="rb_kairos_base_footprint"/>
+  </joint>
+</robot>

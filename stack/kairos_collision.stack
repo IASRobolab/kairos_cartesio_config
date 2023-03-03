@@ -1,0 +1,74 @@
+solver_options:
+    regularization: 1e-1
+    back_end: "qpoases"
+
+stack:
+    - ["EE", "BASE"]
+
+    
+constraints: ["JointLimits", "VelocityLimits", "Base2D", "Collision", "Omni4X"]
+    
+    
+Omni4X:
+    type: "OmniWheels4X"
+    l1: 0.269
+    l2: 0.215
+    wheel_radius: 0.127
+    base_link: "rb_kairos_base_link"
+    joint_wheels_name: ["rb_kairos_front_left_wheel_joint", "rb_kairos_front_right_wheel_joint", "rb_kairos_back_left_wheel_joint", "rb_kairos_back_right_wheel_joint"]    
+    
+EE:
+    type: "Cartesian"
+    distal_link: "rb_kairos_ur16e_EE"
+    base_link: "world"
+    lambda: 1.
+    
+BASE:
+    type: "Cartesian"
+    distal_link: "rb_kairos_base_link"
+    base_link: "world"
+    lambda: 1.
+    indices: [0,1,5]
+    weight: 0.1
+    
+Base2D:
+    type: "Cartesian"
+    distal_link: "rb_kairos_base_link"
+    name: "base_constraint"
+    base_link: "world"
+    lambda: 1.
+    indices: [2,3,4]
+
+    
+JointLimits:
+    type: "JointLimits"
+
+
+VelocityLimits:
+    type: "VelocityLimits"
+    
+Collision:
+    type: CollisionConstraint
+    lib_name: libcartesio_collision_support.so
+    bound_scaling: 0.1
+    distance_threshold: 0.01
+    max_pairs: 20
+    #collision_urdf_path: $(rospack find kairos_cartesio_config)/capsules/fb_kairos_ur5e_oem_capsules.rviz
+    collision_urdf_path: $(rospack find kairos_cartesio_config)/capsules/fb_kairos_ur5e_oem.urdf
+    #collision_srdf_path: $(rospack find kairos_cartesio_config)/robots/ur16e.srdf
+    pairs:
+     - [rb_kairos_base_link, rb_kairos_ur16e_forearm_link]
+     - [rb_kairos_base_link, rb_kairos_ur16e_upper_arm_link]
+     - [rb_kairos_ur16e_wrist_3_link, rb_kairos_ur16e_shoulder_link]
+     - [rb_kairos_ur16e_wrist_3_link, rb_kairos_ur16e_upper_arm_link]
+     - [rb_kairos_ur16e_wrist_3_link, rb_kairos_base_link]
+     - [rb_kairos_ur16e_wrist_3_link, rb_kairos_ur16e_forearm_link]
+     - [rb_kairos_ur16e_wrist_2_link, rb_kairos_ur16e_shoulder_link]
+     - [rb_kairos_ur16e_wrist_2_link, rb_kairos_ur16e_upper_arm_link]
+     - [rb_kairos_ur16e_wrist_2_link, rb_kairos_base_link]
+     - [rb_kairos_ur16e_wrist_2_link, rb_kairos_ur16e_forearm_link]
+     - [rb_kairos_ur16e_wrist_1_link, rb_kairos_ur16e_shoulder_link]
+     - [rb_kairos_ur16e_wrist_1_link, rb_kairos_ur16e_upper_arm_link]
+     - [rb_kairos_ur16e_wrist_1_link, rb_kairos_base_link]
+    
+   
