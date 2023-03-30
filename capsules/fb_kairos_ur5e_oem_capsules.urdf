@@ -1,9 +1,9 @@
 <?xml version="1.0" ?>
-<robot name="rb_kairos_ur10e" version="1.0">
+<robot name="rbkairos_ur10e" version="1.0">
   <gazebo reference="base_footprint">
     <material>Gazebo/Green</material>
   </gazebo>
-  <link name="rb_kairos_base_footprint">
+  <link name="rbkairos_base_footprint">
     <visual>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <geometry>
@@ -11,12 +11,12 @@
       </geometry>
     </visual>
   </link>
-  <joint name="rb_kairos_base_footprint_joint" type="fixed">
+  <joint name="rbkairos_base_footprint_joint" type="fixed">
     <origin xyz="0.0 0.0 0.127" rpy="0.0 0.0 0.0"/>
-    <parent link="rb_kairos_base_footprint"/>
-    <child link="rb_kairos_base_link"/>
+    <parent link="rbkairos_base_footprint"/>
+    <child link="rbkairos_base_link"/>
   </joint>
-  <link name="rb_kairos_base_link">
+  <link name="rbkairos_base_link">
     <inertial>
       <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
       <mass value="125.0"/>
@@ -38,10 +38,10 @@
       </geometry>
     </collision>
   </link>
-  <gazebo reference="rb_kairos_base_link">
+  <gazebo reference="rbkairos_base_link">
     <material>Gazebo/Black</material>
   </gazebo>
-  <link name="rb_kairos_base_chapa">
+  <link name="rbkairos_base_chapa">
     <visual>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <geometry>
@@ -52,12 +52,12 @@
       </material>
     </visual>
   </link>
-  <joint name="rb_kairos_base_tapa_joint" type="fixed">
+  <joint name="rbkairos_base_tapa_joint" type="fixed">
     <origin xyz="0.0 0.0 0.38062" rpy="0.0 0.0 0.0"/>
-    <parent link="rb_kairos_base_link"/>
-    <child link="rb_kairos_base_chapa"/>
+    <parent link="rbkairos_base_link"/>
+    <child link="rbkairos_base_chapa"/>
   </joint>
-  <link name="rb_kairos_base_logo_left">
+  <link name="rbkairos_base_logo_left">
     <visual>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <geometry>
@@ -68,12 +68,12 @@
       </material>
     </visual>
   </link>
-  <joint name="rb_kairos_base_logo_left_joint" type="fixed">
+  <joint name="rbkairos_base_logo_left_joint" type="fixed">
     <origin xyz="0.0 0.28931 0.29062" rpy="0.0 0.0 0.0"/>
-    <parent link="rb_kairos_base_link"/>
-    <child link="rb_kairos_base_logo_left"/>
+    <parent link="rbkairos_base_link"/>
+    <child link="rbkairos_base_logo_left"/>
   </joint>
-  <link name="rb_kairos_base_logo_right">
+  <link name="rbkairos_base_logo_right">
     <visual>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <geometry>
@@ -84,12 +84,12 @@
       </material>
     </visual>
   </link>
-  <joint name="rb_kairos_base_logo_right_joint" type="fixed">
+  <joint name="rbkairos_base_logo_right_joint" type="fixed">
     <origin xyz="0.0 -0.28931 0.29062" rpy="0.0 0.0 3.141592653589793"/>
-    <parent link="rb_kairos_base_link"/>
-    <child link="rb_kairos_base_logo_right"/>
+    <parent link="rbkairos_base_link"/>
+    <child link="rbkairos_base_logo_right"/>
   </joint>
-  <link name="rb_kairos_base_logo_front">
+  <link name="rbkairos_base_logo_front">
     <visual>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <geometry>
@@ -100,12 +100,12 @@
       </material>
     </visual>
   </link>
-  <joint name="rb_kairos_base_logo_front_joint" type="fixed">
+  <joint name="rbkairos_base_logo_front_joint" type="fixed">
     <origin xyz="0.345 0.0 0.0" rpy="0.0 0.0 -1.5707963267948966"/>
-    <parent link="rb_kairos_base_link"/>
-    <child link="rb_kairos_base_logo_front"/>
+    <parent link="rbkairos_base_link"/>
+    <child link="rbkairos_base_logo_front"/>
   </joint>
-  <link name="rb_kairos_base_logo_rear">
+  <link name="rbkairos_base_logo_rear">
     <visual>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <geometry>
@@ -116,25 +116,25 @@
       </material>
     </visual>
   </link>
-  <joint name="rb_kairos_base_logo_rear_joint" type="fixed">
+  <joint name="rbkairos_base_logo_rear_joint" type="fixed">
     <origin xyz="-0.345 0.0 0.0" rpy="0.0 0.0 1.5707963267948966"/>
-    <parent link="rb_kairos_base_link"/>
-    <child link="rb_kairos_base_logo_rear"/>
+    <parent link="rbkairos_base_link"/>
+    <child link="rbkairos_base_logo_rear"/>
   </joint>
-  <link name="rb_kairos_base_docking_contact"/>
-  <joint name="rb_kairos_base_docking_joint" type="fixed">
+  <link name="rbkairos_base_docking_contact"/>
+  <joint name="rbkairos_base_docking_joint" type="fixed">
     <origin xyz="0.35 0.0 0.09" rpy="0.0 0.0 0.0"/>
-    <parent link="rb_kairos_base_link"/>
-    <child link="rb_kairos_base_docking_contact"/>
+    <parent link="rbkairos_base_link"/>
+    <child link="rbkairos_base_docking_contact"/>
   </joint>
-  <joint name="rb_kairos_front_right_wheel_joint" type="continuous">
+  <joint name="rbkairos_front_right_wheel_joint" type="continuous">
     <origin xyz="0.21528 -0.269 0.0" rpy="0.0 0.0 0.0"/>
     <axis xyz="0.0 1.0 0.0"/>
-    <parent link="rb_kairos_base_link"/>
-    <child link="rb_kairos_front_right_wheel_link"/>
+    <parent link="rbkairos_base_link"/>
+    <child link="rbkairos_front_right_wheel_link"/>
     <limit effort="100.0" lower="0" upper="0" velocity="100.0"/>
   </joint>
-  <link name="rb_kairos_front_right_wheel_link">
+  <link name="rbkairos_front_right_wheel_link">
     <inertial>
       <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
       <mass value="6.5"/>
@@ -156,28 +156,28 @@
       </geometry>
     </collision>
   </link>
-  <transmission name="rb_kairos_front_right_wheel_joint_trans">
+  <transmission name="rbkairos_front_right_wheel_joint_trans">
     <type>transmission_interface/SimpleTransmission</type>
-    <joint name="rb_kairos_front_right_wheel_joint">
+    <joint name="rbkairos_front_right_wheel_joint">
       <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
     </joint>
-    <actuator name="rb_kairos_front_right_wheel_joint_motor">
+    <actuator name="rbkairos_front_right_wheel_joint_motor">
       <mechanicalReduction>1.0</mechanicalReduction>
     </actuator>
   </transmission>
-  <gazebo reference="rb_kairos_front_right_wheel_link">
+  <gazebo reference="rbkairos_front_right_wheel_link">
     <mu1 value="0.2"/>
     <mu2 value="0.2"/>
     <minDepth value="0.001"/>
   </gazebo>
-  <joint name="rb_kairos_front_left_wheel_joint" type="continuous">
+  <joint name="rbkairos_front_left_wheel_joint" type="continuous">
     <origin xyz="0.21528 0.269 0.0" rpy="0.0 0.0 0.0"/>
     <axis xyz="0.0 1.0 0.0"/>
-    <parent link="rb_kairos_base_link"/>
-    <child link="rb_kairos_front_left_wheel_link"/>
+    <parent link="rbkairos_base_link"/>
+    <child link="rbkairos_front_left_wheel_link"/>
     <limit effort="100.0" lower="0" upper="0" velocity="100.0"/>
   </joint>
-  <link name="rb_kairos_front_left_wheel_link">
+  <link name="rbkairos_front_left_wheel_link">
     <inertial>
       <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
       <mass value="6.5"/>
@@ -199,28 +199,28 @@
       </geometry>
     </collision>
   </link>
-  <transmission name="rb_kairos_front_left_wheel_joint_trans">
+  <transmission name="rbkairos_front_left_wheel_joint_trans">
     <type>transmission_interface/SimpleTransmission</type>
-    <joint name="rb_kairos_front_left_wheel_joint">
+    <joint name="rbkairos_front_left_wheel_joint">
       <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
     </joint>
-    <actuator name="rb_kairos_front_left_wheel_joint_motor">
+    <actuator name="rbkairos_front_left_wheel_joint_motor">
       <mechanicalReduction>1.0</mechanicalReduction>
     </actuator>
   </transmission>
-  <gazebo reference="rb_kairos_front_left_wheel_link">
+  <gazebo reference="rbkairos_front_left_wheel_link">
     <mu1 value="0.2"/>
     <mu2 value="0.2"/>
     <minDepth value="0.001"/>
   </gazebo>
-  <joint name="rb_kairos_back_left_wheel_joint" type="continuous">
+  <joint name="rbkairos_back_left_wheel_joint" type="continuous">
     <origin xyz="-0.21528 0.269 0.0" rpy="0.0 0.0 0.0"/>
     <axis xyz="0.0 1.0 0.0"/>
-    <parent link="rb_kairos_base_link"/>
-    <child link="rb_kairos_back_left_wheel_link"/>
+    <parent link="rbkairos_base_link"/>
+    <child link="rbkairos_back_left_wheel_link"/>
     <limit effort="100.0" lower="0" upper="0" velocity="100.0"/>
   </joint>
-  <link name="rb_kairos_back_left_wheel_link">
+  <link name="rbkairos_back_left_wheel_link">
     <inertial>
       <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
       <mass value="6.5"/>
@@ -242,28 +242,28 @@
       </geometry>
     </collision>
   </link>
-  <transmission name="rb_kairos_back_left_wheel_joint_trans">
+  <transmission name="rbkairos_back_left_wheel_joint_trans">
     <type>transmission_interface/SimpleTransmission</type>
-    <joint name="rb_kairos_back_left_wheel_joint">
+    <joint name="rbkairos_back_left_wheel_joint">
       <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
     </joint>
-    <actuator name="rb_kairos_back_left_wheel_joint_motor">
+    <actuator name="rbkairos_back_left_wheel_joint_motor">
       <mechanicalReduction>1.0</mechanicalReduction>
     </actuator>
   </transmission>
-  <gazebo reference="rb_kairos_back_left_wheel_link">
+  <gazebo reference="rbkairos_back_left_wheel_link">
     <mu1 value="0.2"/>
     <mu2 value="0.2"/>
     <minDepth value="0.001"/>
   </gazebo>
-  <joint name="rb_kairos_back_right_wheel_joint" type="continuous">
+  <joint name="rbkairos_back_right_wheel_joint" type="continuous">
     <origin xyz="-0.21528 -0.269 0.0" rpy="0.0 0.0 0.0"/>
     <axis xyz="0.0 1.0 0.0"/>
-    <parent link="rb_kairos_base_link"/>
-    <child link="rb_kairos_back_right_wheel_link"/>
+    <parent link="rbkairos_base_link"/>
+    <child link="rbkairos_back_right_wheel_link"/>
     <limit effort="100.0" lower="0" upper="0" velocity="100.0"/>
   </joint>
-  <link name="rb_kairos_back_right_wheel_link">
+  <link name="rbkairos_back_right_wheel_link">
     <inertial>
       <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
       <mass value="6.5"/>
@@ -285,27 +285,27 @@
       </geometry>
     </collision>
   </link>
-  <transmission name="rb_kairos_back_right_wheel_joint_trans">
+  <transmission name="rbkairos_back_right_wheel_joint_trans">
     <type>transmission_interface/SimpleTransmission</type>
-    <joint name="rb_kairos_back_right_wheel_joint">
+    <joint name="rbkairos_back_right_wheel_joint">
       <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
     </joint>
-    <actuator name="rb_kairos_back_right_wheel_joint_motor">
+    <actuator name="rbkairos_back_right_wheel_joint_motor">
       <mechanicalReduction>1.0</mechanicalReduction>
     </actuator>
   </transmission>
-  <gazebo reference="rb_kairos_back_right_wheel_link">
+  <gazebo reference="rbkairos_back_right_wheel_link">
     <mu1 value="0.2"/>
     <mu2 value="0.2"/>
     <minDepth value="0.001"/>
   </gazebo>
-  <joint name="rb_kairos_imu_joint" type="fixed">
+  <joint name="rbkairos_imu_joint" type="fixed">
     <origin xyz="0.127 -0.129 0.212" rpy="0.0 0.0 0.0"/>
     <axis xyz="1.0 0.0 0.0"/>
-    <parent link="rb_kairos_base_link"/>
-    <child link="rb_kairos_imu_link"/>
+    <parent link="rbkairos_base_link"/>
+    <child link="rbkairos_imu_link"/>
   </joint>
-  <link name="rb_kairos_imu_link">
+  <link name="rbkairos_imu_link">
     <inertial>
       <origin xyz="0.0 0.0 0.01" rpy="0.0 0.0 0.0"/>
       <mass value="0.05"/>
@@ -325,12 +325,12 @@
     </collision>
   </link>
   <gazebo>
-    <plugin filename="libhector_gazebo_ros_imu.so" name="rb_kairos_imu_controller">
+    <plugin filename="libhector_gazebo_ros_imu.so" name="rbkairos_imu_controller">
       <alwaysOn>true</alwaysOn>
       <topicName>imu/data</topicName>
-      <serviceName>rb_kairos_imuimu/service</serviceName>
-      <bodyName>rb_kairos_imu_link</bodyName>
-      <frameId>rb_kairos_imu_link</frameId>
+      <serviceName>rbkairos_imuimu/service</serviceName>
+      <bodyName>rbkairos_imu_link</bodyName>
+      <frameId>rbkairos_imu_link</frameId>
       <updateRate>50.0</updateRate>
       <gaussianNoise>0.00</gaussianNoise>
       <yawOffset>0.0</yawOffset>
@@ -344,12 +344,12 @@
       <accelGaussianNoise>0.0 0.0 0.0</accelGaussianNoise>
     </plugin>
   </gazebo>
-  <joint name="rb_kairos_front_laser_base_joint" type="fixed">
+  <joint name="rbkairos_front_laser_base_joint" type="fixed">
     <origin xyz="0.28783 -0.2224 0.22365" rpy="0.0 3.14159 2.3561924999999997"/>
-    <parent link="rb_kairos_base_link"/>
-    <child link="rb_kairos_front_laser_base_link"/>
+    <parent link="rbkairos_base_link"/>
+    <child link="rbkairos_front_laser_base_link"/>
   </joint>
-  <link name="rb_kairos_front_laser_base_link">
+  <link name="rbkairos_front_laser_base_link">
     <inertial>
       <origin xyz="0.0 0.0 0.035" rpy="0.0 0.0 0.0"/>
       <mass value="0.13"/>
@@ -368,14 +368,14 @@
       </geometry>
     </visual>
   </link>
-  <joint name="rb_kairos_front_laser_joint" type="fixed">
+  <joint name="rbkairos_front_laser_joint" type="fixed">
     <origin xyz="0.0 0.0 0.0474" rpy="0.0 0.0 0.0"/>
-    <parent link="rb_kairos_front_laser_base_link"/>
-    <child link="rb_kairos_front_laser_link"/>
+    <parent link="rbkairos_front_laser_base_link"/>
+    <child link="rbkairos_front_laser_link"/>
   </joint>
-  <link name="rb_kairos_front_laser_link"/>
-  <gazebo reference="rb_kairos_front_laser_link">
-    <sensor name="rb_kairos_front_laser_sensor" type="gpu_ray">
+  <link name="rbkairos_front_laser_link"/>
+  <gazebo reference="rbkairos_front_laser_link">
+    <sensor name="rbkairos_front_laser_sensor" type="gpu_ray">
       <pose>0 0 0 0 0 0</pose>
       <visualize>false</visualize>
       <update_rate>40</update_rate>
@@ -399,18 +399,18 @@
           <stddev>0.01</stddev>
         </noise>
       </ray>
-      <plugin filename="libgazebo_ros_gpu_laser.so" name="rb_kairos_front_laser_controller">
+      <plugin filename="libgazebo_ros_gpu_laser.so" name="rbkairos_front_laser_controller">
         <topicName>front_laser/scan</topicName>
-        <frameName>/rb_kairos_front_laser_link</frameName>
+        <frameName>/rbkairos_front_laser_link</frameName>
       </plugin>
     </sensor>
   </gazebo>
-  <joint name="rb_kairos_rear_laser_base_joint" type="fixed">
+  <joint name="rbkairos_rear_laser_base_joint" type="fixed">
     <origin xyz="-0.28783 0.2224 0.22365" rpy="0.0 3.14159 -0.7853975"/>
-    <parent link="rb_kairos_base_link"/>
-    <child link="rb_kairos_rear_laser_base_link"/>
+    <parent link="rbkairos_base_link"/>
+    <child link="rbkairos_rear_laser_base_link"/>
   </joint>
-  <link name="rb_kairos_rear_laser_base_link">
+  <link name="rbkairos_rear_laser_base_link">
     <inertial>
       <origin xyz="0.0 0.0 0.035" rpy="0.0 0.0 0.0"/>
       <mass value="0.13"/>
@@ -429,14 +429,14 @@
       </geometry>
     </visual>
   </link>
-  <joint name="rb_kairos_rear_laser_joint" type="fixed">
+  <joint name="rbkairos_rear_laser_joint" type="fixed">
     <origin xyz="0.0 0.0 0.0474" rpy="0.0 0.0 0.0"/>
-    <parent link="rb_kairos_rear_laser_base_link"/>
-    <child link="rb_kairos_rear_laser_link"/>
+    <parent link="rbkairos_rear_laser_base_link"/>
+    <child link="rbkairos_rear_laser_link"/>
   </joint>
-  <link name="rb_kairos_rear_laser_link"/>
-  <gazebo reference="rb_kairos_rear_laser_link">
-    <sensor name="rb_kairos_rear_laser_sensor" type="gpu_ray">
+  <link name="rbkairos_rear_laser_link"/>
+  <gazebo reference="rbkairos_rear_laser_link">
+    <sensor name="rbkairos_rear_laser_sensor" type="gpu_ray">
       <pose>0 0 0 0 0 0</pose>
       <visualize>false</visualize>
       <update_rate>40</update_rate>
@@ -460,74 +460,74 @@
           <stddev>0.01</stddev>
         </noise>
       </ray>
-      <plugin filename="libgazebo_ros_gpu_laser.so" name="rb_kairos_rear_laser_controller">
+      <plugin filename="libgazebo_ros_gpu_laser.so" name="rbkairos_rear_laser_controller">
         <topicName>rear_laser/scan</topicName>
-        <frameName>/rb_kairos_rear_laser_link</frameName>
+        <frameName>/rbkairos_rear_laser_link</frameName>
       </plugin>
     </sensor>
   </gazebo>
-  <joint name="rb_kairos_front_rgbd_camera_joint" type="fixed">
+  <joint name="rbkairos_front_rgbd_camera_joint" type="fixed">
     <origin xyz="0.3585 0.0 0.28062" rpy="0.0 0.0 0.0"/>
-    <parent link="rb_kairos_base_link"/>
-    <child link="rb_kairos_front_rgbd_camera_link"/>
+    <parent link="rbkairos_base_link"/>
+    <child link="rbkairos_front_rgbd_camera_link"/>
   </joint>
-  <link name="rb_kairos_front_rgbd_camera_link">
+  <link name="rbkairos_front_rgbd_camera_link">
     <inertial>
       <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
       <mass value="0.001"/>
       <inertia ixx="2.3437500000000006e-06" ixy="0.0" ixz="0.0" iyy="2.0833333333333336e-07" iyz="0.0" izz="2.4020833333333336e-06"/>
     </inertial>
   </link>
-  <joint name="rb_kairos_front_rgbd_camera_rgb_joint" type="fixed">
+  <joint name="rbkairos_front_rgbd_camera_rgb_joint" type="fixed">
     <origin xyz="0.0 0.0125 0.015" rpy="0.0 0.0 0.0"/>
-    <parent link="rb_kairos_front_rgbd_camera_link"/>
-    <child link="rb_kairos_front_rgbd_camera_rgb_frame"/>
+    <parent link="rbkairos_front_rgbd_camera_link"/>
+    <child link="rbkairos_front_rgbd_camera_rgb_frame"/>
   </joint>
-  <link name="rb_kairos_front_rgbd_camera_rgb_frame">
+  <link name="rbkairos_front_rgbd_camera_rgb_frame">
     <inertial>
       <origin xyz="-0.02 -0.0125 0.0" rpy="0 0 0"/>
       <mass value="0.297"/>
       <inertia ixx="0.0006960937500000001" ixy="0.0" ixz="0.0" iyy="6.1875e-05" iyz="0.0" izz="0.00071341875"/>
     </inertial>
   </link>
-  <joint name="rb_kairos_front_rgbd_camera_rgb_optical_joint" type="fixed">
+  <joint name="rbkairos_front_rgbd_camera_rgb_optical_joint" type="fixed">
     <origin xyz="0.0 0.0 0.0" rpy="-1.5707963267948966 0.0 -1.5707963267948966"/>
-    <parent link="rb_kairos_front_rgbd_camera_rgb_frame"/>
-    <child link="rb_kairos_front_rgbd_camera_rgb_optical_frame"/>
+    <parent link="rbkairos_front_rgbd_camera_rgb_frame"/>
+    <child link="rbkairos_front_rgbd_camera_rgb_optical_frame"/>
   </joint>
-  <link name="rb_kairos_front_rgbd_camera_rgb_optical_frame">
+  <link name="rbkairos_front_rgbd_camera_rgb_optical_frame">
     <inertial>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <mass value="0.001"/>
       <inertia ixx="2.3437500000000006e-06" ixy="0.0" ixz="0.0" iyy="2.0833333333333336e-07" iyz="0.0" izz="2.4020833333333336e-06"/>
     </inertial>
   </link>
-  <joint name="rb_kairos_front_rgbd_camera_depth_joint" type="fixed">
+  <joint name="rbkairos_front_rgbd_camera_depth_joint" type="fixed">
     <origin xyz="0.0 0.0375 0.015" rpy="0.0 0.0 0.0"/>
-    <parent link="rb_kairos_front_rgbd_camera_link"/>
-    <child link="rb_kairos_front_rgbd_camera_depth_frame"/>
+    <parent link="rbkairos_front_rgbd_camera_link"/>
+    <child link="rbkairos_front_rgbd_camera_depth_frame"/>
   </joint>
-  <link name="rb_kairos_front_rgbd_camera_depth_frame">
+  <link name="rbkairos_front_rgbd_camera_depth_frame">
     <inertial>
       <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
       <mass value="0.001"/>
       <inertia ixx="2.3437500000000006e-06" ixy="0.0" ixz="0.0" iyy="2.0833333333333336e-07" iyz="0.0" izz="2.4020833333333336e-06"/>
     </inertial>
   </link>
-  <joint name="rb_kairos_front_rgbd_camera_depth_optical_joint" type="fixed">
+  <joint name="rbkairos_front_rgbd_camera_depth_optical_joint" type="fixed">
     <origin xyz="0.0 0.0 0.0" rpy="-1.5707963267948966 0.0 -1.5707963267948966"/>
-    <parent link="rb_kairos_front_rgbd_camera_depth_frame"/>
-    <child link="rb_kairos_front_rgbd_camera_depth_optical_frame"/>
+    <parent link="rbkairos_front_rgbd_camera_depth_frame"/>
+    <child link="rbkairos_front_rgbd_camera_depth_optical_frame"/>
   </joint>
-  <link name="rb_kairos_front_rgbd_camera_depth_optical_frame">
+  <link name="rbkairos_front_rgbd_camera_depth_optical_frame">
     <inertial>
       <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
       <mass value="0.001"/>
       <inertia ixx="2.3437500000000006e-06" ixy="0.0" ixz="0.0" iyy="2.0833333333333336e-07" iyz="0.0" izz="2.4020833333333336e-06"/>
     </inertial>
   </link>
-  <gazebo reference="rb_kairos_front_rgbd_camera_link">
-    <sensor name="rb_kairos_front_rgbd_camera_depth_sensor" type="depth">
+  <gazebo reference="rbkairos_front_rgbd_camera_link">
+    <sensor name="rbkairos_front_rgbd_camera_depth_sensor" type="depth">
       <always_on>true</always_on>
       <update_rate>20.0</update_rate>
       <camera>
@@ -542,7 +542,7 @@
           <far>3.5</far>
         </clip>
       </camera>
-      <plugin filename="libgazebo_ros_openni_kinect.so" name="rb_kairos_front_rgbd_camera_controller">
+      <plugin filename="libgazebo_ros_openni_kinect.so" name="rbkairos_front_rgbd_camera_controller">
         <cameraName>front_rgbd_camera</cameraName>
         <alwaysOn>true</alwaysOn>
         <updateRate>10</updateRate>
@@ -551,7 +551,7 @@
         <pointCloudTopicName>depth/points</pointCloudTopicName>
         <cameraInfoTopicName>rgb/camera_info</cameraInfoTopicName>
         <depthImageCameraInfoTopicName>depth/camera_info</depthImageCameraInfoTopicName>
-        <frameName>/rb_kairos_front_rgbd_camera_depth_optical_frame</frameName>
+        <frameName>/rbkairos_front_rgbd_camera_depth_optical_frame</frameName>
         <baseline>0.1</baseline>
         <distortion_k1>0.0</distortion_k1>
         <distortion_k2>0.0</distortion_k2>
@@ -562,7 +562,7 @@
       </plugin>
     </sensor>
   </gazebo>
-  <link name="rb_kairos_ur16e_base_link">
+  <link name="rbkairos_ur5e_base_link">
     <inertial>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <mass value="4.0"/>
@@ -577,15 +577,15 @@
       </material>
     </visual>
   </link>
-  <joint name="rb_kairos_ur16e_shoulder_pan_joint" type="continuous">
+  <joint name="rbkairos_ur5e_shoulder_pan_joint" type="continuous">
     <origin xyz="0.0 0.0 0.1625" rpy="0.0 0.0 3.14159"/>
     <axis xyz="0.0 0.0 1.0"/>
-    <parent link="rb_kairos_ur16e_base_link"/>
-    <child link="rb_kairos_ur16e_shoulder_link"/>
+    <parent link="rbkairos_ur5e_base_link"/>
+    <child link="rbkairos_ur5e_shoulder_link"/>
     <limit effort="150.0" lower="-6.28318" upper="6.28318" velocity="3.15"/>
     <dynamics damping="0.0" friction="0.0"/>
   </joint>
-  <link name="rb_kairos_ur16e_shoulder_link">
+  <link name="rbkairos_ur5e_shoulder_link">
     <inertial>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <mass value="3.7"/>
@@ -607,15 +607,15 @@
       </geometry>
     </collision>
   </link>
-  <joint name="rb_kairos_ur16e_shoulder_lift_joint" type="continuous">
+  <joint name="rbkairos_ur5e_shoulder_lift_joint" type="continuous">
     <origin xyz="0.0 0.0 0.0" rpy="1.570795 0.0 0.0"/>
     <axis xyz="0.0 0.0 1.0"/>
-    <parent link="rb_kairos_ur16e_shoulder_link"/>
-    <child link="rb_kairos_ur16e_upper_arm_link"/>
+    <parent link="rbkairos_ur5e_shoulder_link"/>
+    <child link="rbkairos_ur5e_upper_arm_link"/>
     <limit effort="150.0" lower="-6.28318" upper="6.28318" velocity="3.15"/>
     <dynamics damping="0.0" friction="0.0"/>
   </joint>
-  <link name="rb_kairos_ur16e_upper_arm_link">
+  <link name="rbkairos_ur5e_upper_arm_link">
     <inertial>
       <origin xyz="0.2125 0.0 0.138" rpy="0.0 0.0 0.0"/>
       <mass value="8.393"/>
@@ -637,15 +637,15 @@
       </geometry>
     </collision>
   </link>
-  <joint name="rb_kairos_ur16e_elbow_joint" type="continuous">
+  <joint name="rbkairos_ur5e_elbow_joint" type="continuous">
     <origin xyz="-0.425 0.0 0.0" rpy="0.0 0.0 0.0"/>
     <axis xyz="0.0 0.0 1.0"/>
-    <parent link="rb_kairos_ur16e_upper_arm_link"/>
-    <child link="rb_kairos_ur16e_forearm_link"/>
+    <parent link="rbkairos_ur5e_upper_arm_link"/>
+    <child link="rbkairos_ur5e_forearm_link"/>
     <limit effort="150.0" lower="-6.28318" upper="6.28318" velocity="3.15"/>
     <dynamics damping="0.0" friction="0.0"/>
   </joint>
-  <link name="rb_kairos_ur16e_forearm_link">
+  <link name="rbkairos_ur5e_forearm_link">
     <inertial>
       <origin xyz="0.1961 0.0 0.007" rpy="0.0 0.0 0.0"/>
       <mass value="2.275"/>
@@ -667,15 +667,15 @@
       </geometry>
     </collision>
   </link>
-  <joint name="rb_kairos_ur16e_wrist_1_joint" type="continuous">
+  <joint name="rbkairos_ur5e_wrist_1_joint" type="continuous">
     <origin xyz="-0.3922 0.0 0.1333" rpy="0.0 0.0 0.0"/>
     <axis xyz="0.0 0.0 1.0"/>
-    <parent link="rb_kairos_ur16e_forearm_link"/>
-    <child link="rb_kairos_ur16e_wrist_1_link"/>
+    <parent link="rbkairos_ur5e_forearm_link"/>
+    <child link="rbkairos_ur5e_wrist_1_link"/>
     <limit effort="28.0" lower="-6.28318" upper="6.28318" velocity="6.28"/>
     <dynamics damping="0.0" friction="0.0"/>
   </joint>
-  <link name="rb_kairos_ur16e_wrist_1_link">
+  <link name="rbkairos_ur5e_wrist_1_link">
     <inertial>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <mass value="1.219"/>
@@ -697,15 +697,15 @@
       </geometry>
     </collision>
   </link>
-  <joint name="rb_kairos_ur16e_wrist_2_joint" type="continuous">
+  <joint name="rbkairos_ur5e_wrist_2_joint" type="continuous">
     <origin xyz="0.0 -0.0997 0.0" rpy="1.570795 0.0 0.0"/>
     <axis xyz="0.0 0.0 1.0"/>
-    <parent link="rb_kairos_ur16e_wrist_1_link"/>
-    <child link="rb_kairos_ur16e_wrist_2_link"/>
+    <parent link="rbkairos_ur5e_wrist_1_link"/>
+    <child link="rbkairos_ur5e_wrist_2_link"/>
     <limit effort="28.0" lower="-6.28318" upper="6.28318" velocity="3.2"/>
     <dynamics damping="0.0" friction="0.0"/>
   </joint>
-  <link name="rb_kairos_ur16e_wrist_2_link">
+  <link name="rbkairos_ur5e_wrist_2_link">
     <inertial>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <mass value="1.219"/>
@@ -727,15 +727,15 @@
       </geometry>
     </collision>
   </link>
-  <joint name="rb_kairos_ur16e_wrist_3_joint" type="continuous">
+  <joint name="rbkairos_ur5e_wrist_3_joint" type="continuous">
     <origin xyz="0.0 0.0996 0.0" rpy="1.570795 3.14159 3.14159"/>
     <axis xyz="0.0 0.0 1.0"/>
-    <parent link="rb_kairos_ur16e_wrist_2_link"/>
-    <child link="rb_kairos_ur16e_wrist_3_link"/>
+    <parent link="rbkairos_ur5e_wrist_2_link"/>
+    <child link="rbkairos_ur5e_wrist_3_link"/>
     <limit effort="28.0" lower="-6.28318" upper="6.28318" velocity="6.28"/>
     <dynamics damping="0.0" friction="0.0"/>
   </joint>
-  <link name="rb_kairos_ur16e_wrist_3_link">
+  <link name="rbkairos_ur5e_wrist_3_link">
     <inertial>
       <origin xyz="0.0 0.0 -0.025" rpy="0.0 0.0 0.0"/>
       <mass value="0.1879"/>
@@ -757,35 +757,35 @@
       </geometry>
     </collision>
   </link>
-  <link name="rb_kairos_ur16e_base"/>
-  <joint name="rb_kairos_ur16e_base_link-base_fixed_joint" type="fixed">
+  <link name="rbkairos_ur5e_base"/>
+  <joint name="rbkairos_ur5e_base_link-base_fixed_joint" type="fixed">
     <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 -3.14159"/>
-    <parent link="rb_kairos_ur16e_base_link"/>
-    <child link="rb_kairos_ur16e_base"/>
+    <parent link="rbkairos_ur5e_base_link"/>
+    <child link="rbkairos_ur5e_base"/>
   </joint>
-  <link name="rb_kairos_ur16e_flange">
+  <link name="rbkairos_ur5e_flange">
     <inertial>
       <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
       <mass value="0.1879"/>
       <inertia ixx="0.00013427015462525002" ixy="0.0" ixz="0.0" iyy="0.00013427015462525002" iyz="0.0" izz="0.00019024874999999997"/>
     </inertial>
   </link>
-  <joint name="rb_kairos_ur16e_wrist_3_link_flange_fixed_joint" type="fixed">
+  <joint name="rbkairos_ur5e_wrist_3_link_flange_fixed_joint" type="fixed">
     <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
-    <parent link="rb_kairos_ur16e_wrist_3_link"/>
-    <child link="rb_kairos_ur16e_flange"/>
+    <parent link="rbkairos_ur5e_wrist_3_link"/>
+    <child link="rbkairos_ur5e_flange"/>
   </joint>
-  <joint name="rb_kairos_joint_ur16e_link0_base_footprint" type="fixed">
+  <joint name="rbkairos_joint_ur5e_link0_base_footprint" type="fixed">
     <origin xyz="0.15887 0.0 0.18062" rpy="0.0 0.0 0.0"/>
-    <parent link="rb_kairos_base_chapa"/>
-    <child link="rb_kairos_ur16e_base_link"/>
+    <parent link="rbkairos_base_chapa"/>
+    <child link="rbkairos_ur5e_base_link"/>
   </joint>
-  <link name="rb_kairos_ur16e_EE"/>
-  <joint name="rb_kairos_ur16e_joint_EE" type="fixed">
+  <link name="rbkairos_ur5e_EE"/>
+  <joint name="rbkairos_ur5e_joint_EE" type="fixed">
     <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
     <axis xyz="0.0 0.0 0.0"/>
-    <parent link="rb_kairos_ur16e_flange"/>
-    <child link="rb_kairos_ur16e_EE"/>
+    <parent link="rbkairos_ur5e_flange"/>
+    <child link="rbkairos_ur5e_EE"/>
   </joint>
   <gazebo>
     <plugin filename="libgazebo_ros_control.so" name="ros_control">
@@ -795,156 +795,156 @@
       <legacyModeNS>true</legacyModeNS>
     </plugin>
   </gazebo>
-  <transmission name="rb_kairos_ur16e_shoulder_pan_trans">
+  <transmission name="rbkairos_ur5e_shoulder_pan_trans">
     <type>transmission_interface/SimpleTransmission</type>
-    <joint name="rb_kairos_ur16e_shoulder_pan_joint">
+    <joint name="rbkairos_ur5e_shoulder_pan_joint">
       <hardwareInterface>position</hardwareInterface>
     </joint>
-    <actuator name="rb_kairos_ur16e_shoulder_pan_motor">
+    <actuator name="rbkairos_ur5e_shoulder_pan_motor">
       <mechanicalReduction>1.0</mechanicalReduction>
     </actuator>
   </transmission>
-  <transmission name="rb_kairos_ur16e_shoulder_lift_trans">
+  <transmission name="rbkairos_ur5e_shoulder_lift_trans">
     <type>transmission_interface/SimpleTransmission</type>
-    <joint name="rb_kairos_ur16e_shoulder_lift_joint">
+    <joint name="rbkairos_ur5e_shoulder_lift_joint">
       <hardwareInterface>position</hardwareInterface>
     </joint>
-    <actuator name="rb_kairos_ur16e_shoulder_lift_motor">
+    <actuator name="rbkairos_ur5e_shoulder_lift_motor">
       <mechanicalReduction>1.0</mechanicalReduction>
     </actuator>
   </transmission>
-  <transmission name="rb_kairos_ur16e_elbow_trans">
+  <transmission name="rbkairos_ur5e_elbow_trans">
     <type>transmission_interface/SimpleTransmission</type>
-    <joint name="rb_kairos_ur16e_elbow_joint">
+    <joint name="rbkairos_ur5e_elbow_joint">
       <hardwareInterface>position</hardwareInterface>
     </joint>
-    <actuator name="rb_kairos_ur16e_elbow_motor">
+    <actuator name="rbkairos_ur5e_elbow_motor">
       <mechanicalReduction>1.0</mechanicalReduction>
     </actuator>
   </transmission>
-  <transmission name="rb_kairos_ur16e_wrist_1_trans">
+  <transmission name="rbkairos_ur5e_wrist_1_trans">
     <type>transmission_interface/SimpleTransmission</type>
-    <joint name="rb_kairos_ur16e_wrist_1_joint">
+    <joint name="rbkairos_ur5e_wrist_1_joint">
       <hardwareInterface>position</hardwareInterface>
     </joint>
-    <actuator name="rb_kairos_ur16e_wrist_1_motor">
+    <actuator name="rbkairos_ur5e_wrist_1_motor">
       <mechanicalReduction>1.0</mechanicalReduction>
     </actuator>
   </transmission>
-  <transmission name="rb_kairos_ur16e_wrist_2_trans">
+  <transmission name="rbkairos_ur5e_wrist_2_trans">
     <type>transmission_interface/SimpleTransmission</type>
-    <joint name="rb_kairos_ur16e_wrist_2_joint">
+    <joint name="rbkairos_ur5e_wrist_2_joint">
       <hardwareInterface>position</hardwareInterface>
     </joint>
-    <actuator name="rb_kairos_ur16e_wrist_2_motor">
+    <actuator name="rbkairos_ur5e_wrist_2_motor">
       <mechanicalReduction>1.0</mechanicalReduction>
     </actuator>
   </transmission>
-  <transmission name="rb_kairos_ur16e_wrist_3_trans">
+  <transmission name="rbkairos_ur5e_wrist_3_trans">
     <type>transmission_interface/SimpleTransmission</type>
-    <joint name="rb_kairos_ur16e_wrist_3_joint">
+    <joint name="rbkairos_ur5e_wrist_3_joint">
       <hardwareInterface>position</hardwareInterface>
     </joint>
-    <actuator name="rb_kairos_ur16e_wrist_3_motor">
+    <actuator name="rbkairos_ur5e_wrist_3_motor">
       <mechanicalReduction>1.0</mechanicalReduction>
     </actuator>
   </transmission>
-  <transmission name="rb_kairos_ur16e_wrist_3_link_flange_trans">
+  <transmission name="rbkairos_ur5e_wrist_3_link_flange_trans">
     <type>transmission_interface/SimpleTransmission</type>
-    <joint name="rb_kairos_ur16e_wrist_3_link_flange_fixed_joint">
+    <joint name="rbkairos_ur5e_wrist_3_link_flange_fixed_joint">
       <hardwareInterface>position</hardwareInterface>
     </joint>
-    <actuator name="rb_kairos_ur16e_wrist_3_link_flange_motor">
+    <actuator name="rbkairos_ur5e_wrist_3_link_flange_motor">
       <mechanicalReduction>1.0</mechanicalReduction>
     </actuator>
   </transmission>
-  <gazebo reference="rb_kairos_ur16e_base_link">
+  <gazebo reference="rbkairos_ur5e_base_link">
     <selfCollide>False</selfCollide>
     <mu1>0.2</mu1>
     <mu2>0.2</mu2>
     <minDepth>0.001</minDepth>
     <maxVel>0</maxVel>
   </gazebo>
-  <gazebo reference="rb_kairos_ur16e_shoulder_link">
+  <gazebo reference="rbkairos_ur5e_shoulder_link">
     <selfCollide>False</selfCollide>
     <mu1>0.2</mu1>
     <mu2>0.2</mu2>
   </gazebo>
-  <gazebo reference="rb_kairos_ur16e_upper_arm_link">
+  <gazebo reference="rbkairos_ur5e_upper_arm_link">
     <selfCollide>False</selfCollide>
     <mu1>0.2</mu1>
     <mu2>0.2</mu2>
   </gazebo>
-  <gazebo reference="rb_kairos_ur16e_forearm_link">
+  <gazebo reference="rbkairos_ur5e_forearm_link">
     <selfCollide>False</selfCollide>
     <mu1>0.2</mu1>
     <mu2>0.2</mu2>
   </gazebo>
-  <gazebo reference="rb_kairos_ur16e_wrist_1_link">
+  <gazebo reference="rbkairos_ur5e_wrist_1_link">
     <selfCollide>False</selfCollide>
     <mu1>0.2</mu1>
     <mu2>0.2</mu2>
   </gazebo>
-  <gazebo reference="rb_kairos_ur16e_wrist_3_link">
+  <gazebo reference="rbkairos_ur5e_wrist_3_link">
     <selfCollide>False</selfCollide>
     <mu1>0.2</mu1>
     <mu2>0.2</mu2>
   </gazebo>
-  <gazebo reference="rb_kairos_ur16e_wrist_2_link">
+  <gazebo reference="rbkairos_ur5e_wrist_2_link">
     <selfCollide>False</selfCollide>
     <mu1>0.2</mu1>
     <mu2>0.2</mu2>
   </gazebo>
-  <gazebo reference="rb_kairos_ur16e_ee_link">
+  <gazebo reference="rbkairos_ur5e_ee_link">
     <selfCollide>False</selfCollide>
     <mu1>0.2</mu1>
     <mu2>0.2</mu2>
   </gazebo>
-  <gazebo reference="rb_kairos_ur16e_shoulder_pan_joint">
+  <gazebo reference="rbkairos_ur5e_shoulder_pan_joint">
     <implicitSpringDamper>1</implicitSpringDamper>
     <provideFeedback>true</provideFeedback>
   </gazebo>
-  <gazebo reference="rb_kairos_ur16e_shoulder_lift_joint">
+  <gazebo reference="rbkairos_ur5e_shoulder_lift_joint">
     <implicitSpringDamper>1</implicitSpringDamper>
     <provideFeedback>true</provideFeedback>
   </gazebo>
-  <gazebo reference="rb_kairos_ur16e_elbow_joint">
+  <gazebo reference="rbkairos_ur5e_elbow_joint">
     <implicitSpringDamper>1</implicitSpringDamper>
     <provideFeedback>true</provideFeedback>
   </gazebo>
-  <gazebo reference="rb_kairos_ur16e_wrist_1_joint">
+  <gazebo reference="rbkairos_ur5e_wrist_1_joint">
     <implicitSpringDamper>1</implicitSpringDamper>
     <provideFeedback>true</provideFeedback>
   </gazebo>
-  <gazebo reference="rb_kairos_ur16e_wrist_2_joint">
+  <gazebo reference="rbkairos_ur5e_wrist_2_joint">
     <implicitSpringDamper>1</implicitSpringDamper>
     <provideFeedback>true</provideFeedback>
   </gazebo>
-  <gazebo reference="rb_kairos_ur16e_wrist_3_joint">
+  <gazebo reference="rbkairos_ur5e_wrist_3_joint">
     <implicitSpringDamper>1</implicitSpringDamper>
     <provideFeedback>true</provideFeedback>
   </gazebo>
-  <gazebo reference="rb_kairos_ur16e_wrist_3_link_flange_fixed_joint">
+  <gazebo reference="rbkairos_ur5e_wrist_3_link_flange_fixed_joint">
     <implicitSpringDamper>1</implicitSpringDamper>
     <provideFeedback>true</provideFeedback>
   </gazebo>
   <gazebo>
-    <plugin filename="libgazebo_ros_ft_sensor.so" name="rb_kairos_ur16e_flange_ft_sensor">
+    <plugin filename="libgazebo_ros_ft_sensor.so" name="rbkairos_ur5e_flange_ft_sensor">
       <updateRate>100.0</updateRate>
       <topicName>wrench</topicName>
-      <jointName>rb_kairos_ur16e_wrist_3_link_flange_fixed_joint</jointName>
+      <jointName>rbkairos_ur5e_wrist_3_link_flange_fixed_joint</jointName>
     </plugin>
   </gazebo>
   <gazebo>
-    <plugin filename="libgazebo_ros_ft_sensor.so" name="rb_kairos_ur16e_flange_ft_sensor">
+    <plugin filename="libgazebo_ros_ft_sensor.so" name="rbkairos_ur5e_flange_ft_sensor">
       <updateRate>100.0</updateRate>
-      <topicName>ur16e_ft_sensor</topicName>
-      <jointName>rb_kairos_ur16e_wrist_3_link_flange_fixed_joint</jointName>
+      <topicName>ur5e_ft_sensor</topicName>
+      <jointName>rbkairos_ur5e_wrist_3_link_flange_fixed_joint</jointName>
     </plugin>
   </gazebo>
   <link name="world"/>
   <joint name="reference" type="floating">
     <parent link="world"/>
-    <child link="rb_kairos_base_footprint"/>
+    <child link="rbkairos_base_footprint"/>
   </joint>
 </robot>
