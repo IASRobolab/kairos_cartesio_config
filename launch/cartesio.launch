@@ -5,7 +5,7 @@
     
 
     <!-- General arguments -->
-    <arg name="robot_id" default="rb_kairos"/>
+    <arg name="robot_id" default="rbkairos"/>
     <arg name="has_pole_camera" default="false"/>
     
     <!-- Summit XLS arguments -->
@@ -14,7 +14,7 @@
     <arg name="base_launch_ros_planar_move_plugin" default="false"/>
 
     <!-- Panda arguments -->
-    <arg name="arm_id" default="ur16e"/>
+    <arg name="arm_id" default="ur5e"/>
     <arg name="arm_transmission_type" default="position"/>
 	<arg name="arm_gazebo_ros_control" default="false"/>
     <!-- <arg name="arm_launch_gripper" default="franka_gripper"/> -->
@@ -68,7 +68,7 @@
     
     <arg name="prefix" default=""/>
     <include file="$(find cartesian_interface)/launch/cartesio.launch">
-        <arg name="rate" value="100.0"/>
+        <arg name="rate" value="500.0"/>
         <arg name="prefix" value="$(arg prefix)"/>
         <arg name="is_model_floating_base" value="true"/>
     </include>
