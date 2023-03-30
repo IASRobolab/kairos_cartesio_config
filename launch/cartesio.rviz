@@ -63,151 +63,152 @@ Visualization Manager:
         Expand Link Details: false
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
-        rb_kairos_back_left_wheel_link:
+        rbkairos_back_left_wheel_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        rb_kairos_back_right_wheel_link:
+        rbkairos_back_right_wheel_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        rb_kairos_base_chapa:
+        rbkairos_base_chapa:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        rb_kairos_base_docking_contact:
+        rbkairos_base_docking_contact:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        rb_kairos_base_footprint:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        rb_kairos_base_link:
+        rbkairos_base_footprint:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        rb_kairos_base_logo_front:
+        rbkairos_base_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        rb_kairos_base_logo_left:
+        rbkairos_base_logo_front:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        rb_kairos_base_logo_rear:
+        rbkairos_base_logo_left:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        rb_kairos_base_logo_right:
+        rbkairos_base_logo_rear:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        rb_kairos_front_laser_base_link:
+        rbkairos_base_logo_right:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        rb_kairos_front_laser_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        rb_kairos_front_left_wheel_link:
+        rbkairos_front_laser_base_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        rb_kairos_front_rgbd_camera_depth_frame:
+        rbkairos_front_laser_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        rb_kairos_front_rgbd_camera_depth_optical_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        rb_kairos_front_rgbd_camera_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        rb_kairos_front_rgbd_camera_rgb_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        rb_kairos_front_rgbd_camera_rgb_optical_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        rb_kairos_front_right_wheel_link:
+        rbkairos_front_left_wheel_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        rb_kairos_imu_link:
+        rbkairos_front_rgbd_camera_depth_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        rbkairos_front_rgbd_camera_depth_optical_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        rbkairos_front_rgbd_camera_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        rb_kairos_rear_laser_base_link:
+        rbkairos_front_rgbd_camera_rgb_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        rbkairos_front_rgbd_camera_rgb_optical_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        rbkairos_front_right_wheel_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        rb_kairos_rear_laser_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        rb_kairos_ur16e_EE:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        rb_kairos_ur16e_base:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        rb_kairos_ur16e_base_link:
+        rbkairos_imu_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        rb_kairos_ur16e_flange:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        rb_kairos_ur16e_forearm_link:
+        rbkairos_rear_laser_base_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        rb_kairos_ur16e_shoulder_link:
+        rbkairos_rear_laser_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        rbkairos_ur5e_EE:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        rbkairos_ur5e_base:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        rbkairos_ur5e_base_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        rb_kairos_ur16e_upper_arm_link:
+        rbkairos_ur5e_flange:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        rbkairos_ur5e_forearm_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        rb_kairos_ur16e_wrist_1_link:
+        rbkairos_ur5e_shoulder_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        rb_kairos_ur16e_wrist_2_link:
+        rbkairos_ur5e_upper_arm_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        rb_kairos_ur16e_wrist_3_link:
+        rbkairos_ur5e_wrist_1_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        rbkairos_ur5e_wrist_2_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        rbkairos_ur5e_wrist_3_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -229,7 +230,7 @@ Visualization Manager:
       Show Axes: false
       Show Descriptions: true
       Show Visual Aids: false
-      Update Topic: /rb_kairos_ur16e_EE_cartesian_marker_server/update
+      Update Topic: /rbkairos_ur5e_EE_cartesian_marker_server/update
       Value: true
   Enabled: true
   Global Options:
@@ -259,7 +260,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 2.4508087635040283
+      Distance: 3.4432098865509033
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -296,4 +297,4 @@ Window Geometry:
     collapsed: false
   Width: 1848
   X: 72
-  Y: 27
+  Y: 0
