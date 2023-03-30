@@ -7,6 +7,7 @@
     <!-- General arguments -->
     <arg name="robot_id" default="rbkairos"/>
     <arg name="has_pole_camera" default="false"/>
+    <arg name="rate" default="250.0"/>
     
     <!-- Summit XLS arguments -->
     <arg name="base_id" default="summit_xls"/>
@@ -68,7 +69,7 @@
     
     <arg name="prefix" default=""/>
     <include file="$(find cartesian_interface)/launch/cartesio.launch">
-        <arg name="rate" value="500.0"/>
+        <arg name="rate" value="$(arg rate)"/>
         <arg name="prefix" value="$(arg prefix)"/>
         <arg name="is_model_floating_base" value="true"/>
     </include>

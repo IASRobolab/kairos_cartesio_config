@@ -100,7 +100,7 @@ if __name__ == '__main__':
     try:
         robot_id = rospy.get_param("robot_id", "rbkairos")
         rospy.init_node("cartesio2kairos", anonymous=True)
-        r = 500.
+        r = rospy.get_param("rate", 250.)
         rate = rospy.Rate(r)
 
         converter(["rbkairos_ur5e_shoulder_pan_joint", "rbkairos_ur5e_shoulder_lift_joint", "rbkairos_ur5e_elbow_joint",
